@@ -8,7 +8,7 @@ class Login extends Component {
     username: '',
     password: '',
     errorMsg: '',
-    showSubmitError: 'false',
+    showSubmitError: false,
   }
 
   onChangeUsername = event => {
@@ -52,7 +52,7 @@ class Login extends Component {
     return (
       <>
         <label className="input-label" htmlFor="username">
-          Username
+          USERNAME
         </label>
         <input
           type="text"
@@ -71,12 +71,13 @@ class Login extends Component {
     return (
       <>
         <label className="input-label" htmlFor="password">
-          Password
+          PASSWORD
         </label>
         <input
           type="password"
           id="password"
           value={password}
+          placeholder="Password"
           onChange={this.onChangePassword}
           className="password-input-field"
         />
@@ -104,7 +105,9 @@ class Login extends Component {
             <button type="submit" className="login-button">
               Login
             </button>
-            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+            {showSubmitError && (
+              <p className="error-message">{`*${errorMsg}`}</p>
+            )}
           </form>
         </div>
       </div>

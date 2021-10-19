@@ -1,9 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-import {GoLocation} from 'react-icons/go'
-import {BsBriefcase} from 'react-icons/bs'
-import {AiOutlineStar} from 'react-icons/ai'
+import {MdLocationOn} from 'react-icons/md'
+import {BsBriefcaseFill} from 'react-icons/bs'
+import {AiFillStar} from 'react-icons/ai'
+import {BiLinkExternal} from 'react-icons/bi'
 import Header from '../Header'
 import './index.css'
 
@@ -90,7 +91,7 @@ class JobItemDetails extends Component {
   }
 
   renderFailureView = () => (
-    <div className="failure-view">
+    <div className="job-details-failure-view">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
         alt="failure view"
@@ -134,65 +135,71 @@ class JobItemDetails extends Component {
       <>
         <Header />
         <div className="success-view-container">
-          <div className="logo-title-rating">
-            <img
-              src={companyLogoUrl}
-              alt="job details company logo"
-              className="company-logo"
-            />
-            <div className="title-rating">
-              <h1 className="title">{title}</h1>
-              <div className="rating-container">
-                <AiOutlineStar />
-                <p className="rating">{rating}</p>
+          <div className="current-job-container">
+            <div className="logo-title-rating">
+              <img
+                src={companyLogoUrl}
+                alt="job details company logo"
+                className="company-logo"
+              />
+              <div className="title-rating">
+                <h1 className="title">{title}</h1>
+                <div className="rating-container">
+                  <AiFillStar color="#fbbf24" />
+                  <p className="rating">{rating}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="location-type-package">
-            <div className="location-type">
-              <div className="location-container">
-                <GoLocation />
-                <p className="location">{location}</p>
+            <div className="location-type-package">
+              <div className="location-type">
+                <div className="location-container">
+                  <MdLocationOn color="white" />
+                  <p className="location">{location}</p>
+                </div>
+                <div className="type-container">
+                  <BsBriefcaseFill color="white" />
+                  <p className="current-job-employment-type">
+                    {employmentType}
+                  </p>
+                </div>
               </div>
-              <div className="employment-type-container">
-                <BsBriefcase />
-                <p className="employment-type">{employmentType}</p>
+              <p className="package">{packagePerAnnum}</p>
+            </div>
+            <div className="description-container">
+              <div className="description-visit-container">
+                <h1 className="job-description-heading">Description</h1>
+                <a className="visit-link" href={companyWebsiteUrl}>
+                  Visit <BiLinkExternal className="external-link-icon" />
+                </a>
               </div>
+              <p className="job-description-para">{jobDescription}</p>
             </div>
-            <p className="package">{packagePerAnnum}</p>
-          </div>
-          <div className="description-container">
-            <div className="description-visit-container">
-              <h1 className="heading">Description</h1>
-              <a href={companyWebsiteUrl}>Visit</a>
+            <div className="skills-container">
+              <h1 className="skill-heading">Skills</h1>
+              <ul className="skills-list">
+                {skills.map(each => (
+                  <li className="skill-item" key={each.name}>
+                    <img
+                      src={each.imageUrl}
+                      alt={each.name}
+                      className="skill-logo-img"
+                    />
+                    <h1 className="skill-name">{each.name}</h1>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="description">{jobDescription}</p>
-          </div>
-          <div className="skills-container">
-            <h1 className="skill-heading">Skills</h1>
-            <ul className="skills">
-              {skills.map(each => (
-                <li className="skill-item" key={each.name}>
-                  <img
-                    src={each.imageUrl}
-                    alt={each.name}
-                    className="skill-logo-img"
-                  />
-                  <h1 className="skill-name">{each.name}</h1>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="life-at-company-container">
-            <div className="lac-left-container">
-              <h1 className="lac-heading">Life At Company</h1>
-              <p className="lac-description">{lifeAtCompany.description}</p>
+            <div className="life-at-company-container">
+              <div className="lac-left-container">
+                <h1 className="lac-heading">Life At Company</h1>
+                <p className="lac-description">{lifeAtCompany.description}</p>
+              </div>
+              <img
+                src={lifeAtCompany.imageUrl}
+                alt="life at company"
+                className="lac-img"
+              />
             </div>
-            <img
-              src={lifeAtCompany.imageUrl}
-              alt="life at company"
-              className="lac-img"
-            />
           </div>
           <h1 className="similar-jobs-heading">Similar Jobs</h1>
           <ul className="similar-jobs-container">
@@ -207,7 +214,7 @@ class JobItemDetails extends Component {
                   <div className="similar-title-location">
                     <h1 className="similar-job-title">{each.title}</h1>
                     <div className="similar-rating-container">
-                      <AiOutlineStar />
+                      <AiFillStar color="#fbbf24" />
                       <p className="similar-rating">{each.rating}</p>
                     </div>
                   </div>
@@ -218,11 +225,11 @@ class JobItemDetails extends Component {
                 </div>
                 <div className="similar-type-location">
                   <div className="similar-job-location-container">
-                    <GoLocation />
+                    <MdLocationOn color="white" />
                     <p className="similar-job-location">{each.location}</p>
                   </div>
                   <div className="similar-type-container">
-                    <BsBriefcase />
+                    <BsBriefcaseFill color="white" />
                     <p className="similar-type">{each.employmentType}</p>
                   </div>
                 </div>

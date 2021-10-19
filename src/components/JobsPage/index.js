@@ -63,9 +63,9 @@ class JobsPage extends Component {
     userApiStatus: apiConstants.initial,
   }
 
-  componentDidMount = () => {
-    this.getJobsList()
+  componentDidMount() {
     this.getUserProfile()
+    this.getJobsList()
   }
 
   getJobsList = async () => {
@@ -188,7 +188,12 @@ class JobsPage extends Component {
               id={each.employmentTypeId}
               onChange={this.onChangeEmploymentType}
             />
-            <label htmlFor={each.employmentTypeId}>{each.label}</label>
+            <label
+              className="employment-type-options"
+              htmlFor={each.employmentTypeId}
+            >
+              {each.label}
+            </label>
           </li>
         ))}
       </ul>
@@ -207,7 +212,9 @@ class JobsPage extends Component {
               id={each.salaryRangeId}
               onChange={this.onChangeSalaryOptions}
             />
-            <label htmlFor={each.salaryRangeId}>{each.label}</label>
+            <label className="salary-range-option" htmlFor={each.salaryRangeId}>
+              {each.label}
+            </label>
           </li>
         ))}
       </ul>
@@ -257,7 +264,7 @@ class JobsPage extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="job-results-loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )

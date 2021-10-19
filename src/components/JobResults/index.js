@@ -1,6 +1,6 @@
-import {GoLocation} from 'react-icons/go'
-import {BsBriefcase} from 'react-icons/bs'
-import {AiOutlineStar} from 'react-icons/ai'
+import {MdLocationOn} from 'react-icons/md'
+import {BsBriefcaseFill} from 'react-icons/bs'
+import {AiFillStar} from 'react-icons/ai'
 import {Link} from 'react-router-dom'
 
 import './index.css'
@@ -30,7 +30,7 @@ const JobResults = props => {
           <div className="title-rating">
             <h1 className="job-title">{title}</h1>
             <div className="rating-container">
-              <AiOutlineStar />
+              <AiFillStar color="#fbbf24" />
               <p className="rating">{rating}</p>
             </div>
           </div>
@@ -38,19 +38,19 @@ const JobResults = props => {
         <div className="item-container-2">
           <div className="location-type">
             <div className="location-container">
-              <GoLocation />
+              <MdLocationOn />
               <p className="location">{location}</p>
             </div>
             <div className="type-container">
-              <BsBriefcase />
-              <p className="employment-type">{employmentType}</p>
+              <BsBriefcaseFill />
+              <p className="list-item-employment-type">{employmentType}</p>
             </div>
           </div>
           <p className="package-per-annum">{packagePerAnnum}</p>
         </div>
         <div className="item-container-3">
           <h1 className="description-heading">Description</h1>
-          <p className="description">{jobDescription}</p>
+          <p className="job-description">{jobDescription}</p>
         </div>
       </li>
     </Link>

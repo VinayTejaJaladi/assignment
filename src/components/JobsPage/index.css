@@ -1,0 +1,143 @@
+.jobs-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+}
+.profile-options-container {
+  width: 25%;
+  flex-shrink: 0;
+  height: 100%;
+  margin-left: 50px;
+  margin-top: 30px;
+  height: 100%;
+}
+.user-profile-container {
+  width: 90%;
+  border-bottom: 1px solid white;
+}
+.employment-type-container {
+  border-bottom: 1px solid white;
+  width: 90%;
+}
+.types-of-employment {
+  font-size: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  color: #7e858e;
+}
+.employment-type-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+}
+.employment-type-options-item {
+  margin-bottom: 5px;
+}
+.employment-type-options {
+  font-size: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  color: #7e858e;
+  margin-left: 5px;
+}
+.salary-range-container {
+  width: 90%;
+}
+.salary-range {
+  font-size: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  color: #7e858e;
+}
+.salary-options-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+}
+.salary-range-option-item {
+  margin-bottom: 5px;
+}
+.salary-range-option {
+  font-size: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  color: #7e858e;
+  margin-left: 5px;
+}
+
+.search-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+.search-input-field {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid white;
+  width: 250px;
+  height: 30px;
+  border-right: none;
+}
+.search-button {
+  width: 50px;
+  height: 30px;
+  padding: 0px;
+  background: #2c364c;
+  border: none;
+}
+.search-icon {
+  background: #2c364c;
+  height: 30px;
+  width: 50px;
+  color: white;
+  border: 1px solid white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: none;
+}
+.jobs-list-container {
+  overflow-y: scroll;
+  height: 90vh;
+  list-style: none;
+  padding: 0px;
+}
+.no-results-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+.failure-view {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+.retry-button {
+  color: white;
+  background: #4f46e5;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  width: 80px;
+}
+.job-results-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 100px;
+}

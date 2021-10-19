@@ -1,0 +1,33 @@
+.nav-header {
+  display: flex;
+  width: 100vw;
+  height: 12%;
+  background: #272727;
+}
+.nav-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+.header-app-logo {
+  height: 35px;
+  width: 150px;
+}
+.nav-link {
+  text-decoration: none;
+  margin-right: 15px;
+  color: white;
+}
+.logout-button {
+  background: #4f46e5;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  color: white;
+  width: 100px;
+}
